@@ -1,0 +1,14 @@
+.UserList__card-username {
+    font-weight: 100;
+}
+
+.user_image {
+
+max-width: 50%;
+height: auto;
+
+}
+
+.imageU {
+    border-radius: 50%;
+}
