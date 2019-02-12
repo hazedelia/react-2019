@@ -1,0 +1,16 @@
+.Login {
+    height: 100vh;
+    background-color: rgb(228, 214, 187);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+
+.Login__content {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}

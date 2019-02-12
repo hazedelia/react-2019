@@ -1,6 +1,6 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import placeHolderImage from '../../assets/image-placeholder.svg';
-import PostCard from '../PostCard/PostCard';  
+import PostCard from '../PostCard/PostCard';
 import "./Posts.css";
 
 const posts = [
@@ -13,14 +13,15 @@ const posts = [
 class Posts extends Component {
     render() {
         return (
-            <div className="Posts"> 
-                {posts.map(post => (
-                    <PostCard 
+            <div className="Posts">
+                {posts.map((post, index) => (
+                    <PostCard
+                        key={index}
                         title={post.title}
                         description={post.description}
                         image={post.image}
                     />
-             ))}
+                ))}
             </div>
 
 
