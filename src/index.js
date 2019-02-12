@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
+import dotenv from "dotenv";
+import RegisterContainer from "./containers/RegisterContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
+dotenv.config();
 
 class Root extends Component {
     render() {
@@ -17,7 +19,7 @@ class Root extends Component {
                 <Switch>
                     <Route exact path="/" component={App} />
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/register" component={RegisterContainer} />
                 </Switch>
             </BrowserRouter>
         )
