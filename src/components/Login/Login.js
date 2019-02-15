@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
+
 class Login extends Component {
+
     constructor() {
         super();
 
@@ -10,14 +13,25 @@ class Login extends Component {
             email: "",
             password: "",
         }
+        console.log("constructor");
+
     }
 
+
+    static getDerivedStateFromProps(props, state) {
+        console.log('get derived state')
+    }
 
     onInputChange = e => {
         this.setState({ [e.target.name]: e.target.value });
+        console.log('on input change');
     }
 
+
+
     render() {
+        const { email, password } = this.state;
+        const { onLogin } = this.props;
         return (
             < div className="Login" >
                 <div className="Login__content">
@@ -47,20 +61,33 @@ class Login extends Component {
                             />
 
                         </div>
+                        <Button
+                            onClick={() => onLogin(email, password)}
 
-                        <Button color="dark">Login</Button>
+                            color="dark">Login</Button>
                     </form>
+                    <div className="Register__content__link">
 
+                        <Link to="/register">not registered? register</Link>
+                    </div>
                 </div>
 
-
+                render () {
+                    console.log('render')
+                }
 
             </div >
 
-
         )
-    }
-}
+
+    };
+    componentDidMount() {
+        console.log('component did mount')
+    };
+
+
+
+};
 
 
 

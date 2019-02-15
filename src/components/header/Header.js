@@ -5,24 +5,10 @@ import PostModal from "../postModal/PostModal";
 import "./Header.css";
 
 class Header extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isOpen: false,
-        };
-
-    }
-
-    onOpenModal = () => {
-        this.setState({ isOpen: true });
-    };
-
-    onCloseModal = () => {
-        this.setState({ isOpen: false });
-    };
 
     render() {
-        const { isOpen } = this.state;
+        const { isOpen, toggleModal, onInputChange, onImageUpload, onPostSubmit } = this.props;
+
         return (
             <div className="Header">
                 <div className="Header__title">
@@ -32,11 +18,16 @@ class Header extends Component {
                 <div className="Header__button">
 
                 </div>
-                <Button onClick={this.onOpenModal} color="dark">
+                <Button onClick={toggleModal} color="dark">
                     Upload
                 </Button>
                 {
-                    isOpen && <PostModal onClose={this.onCloseModal} />}
+                    isOpen && <PostModal
+                        onImageUpload={onImageUpload}
+                        onInputChange={onInputChange}
+                        onPostSubmit={onPostSubmit}
+                        onClose={toggleModal} />
+                }
             </div>
         )
     }

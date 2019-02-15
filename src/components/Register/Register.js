@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 
@@ -38,7 +39,7 @@ class Register extends Component {
                                 className="form-control"
                                 type="username"
                                 name="username"
-                                value={this.state.username} />
+                                value={username} />
                         </div>
 
                         <div className="form-group">
@@ -48,7 +49,7 @@ class Register extends Component {
                                 className="form-control"
                                 type="email"
                                 name="email"
-                                value={this.state.email} />
+                                value={email} />
                         </div>
 
                         <div className="form-group">
@@ -58,7 +59,7 @@ class Register extends Component {
                                 className="form-control"
                                 type="password"
                                 name="password"
-                                value={this.state.password}
+                                value={password}
                             />
                         </div>
 
@@ -66,7 +67,13 @@ class Register extends Component {
                             onClick={() => onRegister(username, email, password)}
 
                             color="dark">Register</Button>
+
+
                     </form>
+                    <div className="Register__content__link">
+
+                        <Link to="/login">already registered? login</Link>
+                    </div>
 
                 </div>
 
